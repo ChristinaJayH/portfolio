@@ -1,0 +1,36 @@
+/* GLOBAL RESET + SMOOTH SCROLL */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  /* margin: 0;
+  padding: 0; */
+  /* width: 100%;
+  height: 100%; */
+  background-color: white;
+  color: black;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+
+/* BASIC ELEMENT STYLES */
+h1, h2, h3, h4, h5, h6, p {
+  /* margin: 0;
+  padding: 0; */
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  /* padding: 0.6em 1.2em; */
+  font-size: 1rem;
+  /* border-radius: 0%; */
+  cursor: pointer;
+}
