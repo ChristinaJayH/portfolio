@@ -76,13 +76,13 @@ const NavBar = () => {
     >
       {/* Left Side: Social Icons */}
       <div style={{ display: 'flex', gap: '5rem', alignItems: 'center' }}>
-        <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/ChristinaJayH" target="_blank" rel="noopener noreferrer">
           <GitHubIcon style={{ color: '#000', fontSize: '1.8rem' }} />
         </a>
         <a href="mailto:your@email.com">
           <MailOutlineIcon style={{ color: '#000', fontSize: '1.8rem' }} />
         </a>
-        <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/christina-h-665625114/" target="_blank" rel="noopener noreferrer">
           <LinkedInIcon style={{ color: '#000', fontSize: '1.8rem' }} />
         </a>
         
