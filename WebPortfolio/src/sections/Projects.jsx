@@ -6,14 +6,15 @@ import ProjectCard from '../components/ProjectCard';
 const projectsData = [
   {
     title: 'digitalmatrix',
-    subtitle: 'School Webpage Content Review  ',
-    description: 'Redeveloped a Git Hub Project Using React',
-    image: '/src/assets/digital.png',
-    liveLink: 'https://yourliveapp.com',
-    learnMoreLink: 'https://yourportfolio.com/about',
+    subtitle: 'School Webpage Content Review',
+    description: 'Redeveloped a GitHub Project Using React',
+    image: 'digital.png',
+    liveLink: 'https://christinajayh.github.io/digital-matrix-academy/#/',
+    learnMoreLink: 'https://github.com/ChristinaJayH/digital-matrix-academy',
   },
-
 ];
+
+
 
 const Projects = () => {
   return (

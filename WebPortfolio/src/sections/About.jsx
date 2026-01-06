@@ -58,11 +58,14 @@ const About = () => {
           transition={{ duration: 0.8, ease: 'easeOut', delay: 0.4 }}
           viewport={{ once: false, amount: 0.4 }}
         >
-          <img
-            src='/src/assets/tech.png'
-            alt="Tech Stack Logos"
-            style={{ maxWidth: '100%', height: 'auto' }}
-          />
+<img
+  src="./tech.png"
+  alt="Tech Stack Logos"
+  style={{ maxWidth: '100%', height: 'auto' }}
+/>
+
+
+
         </motion.div>
       </div>
     </section>

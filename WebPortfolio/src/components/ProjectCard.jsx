@@ -4,7 +4,11 @@ const ProjectCard = ({ title, subtitle, description, liveLink, learnMoreLink, im
   return (
     <div style={containerStyle}>
       <div style={imageContainerStyle}>
-        <img src={image} alt={title} style={imageStyle} />
+<img
+  src={`./${image}`}
+  alt={title}
+  style={{ width: '100%', height: 'auto' }}
+/>
       </div>
 
       <div style={textBlockStyle}>
