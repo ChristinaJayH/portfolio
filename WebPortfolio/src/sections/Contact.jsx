@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Contact = () => {
+   const [showPopup, setShowPopup] = useState(false);
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  setShowPopup(true);
+  e.target.reset();
+
+  setTimeout(() => setShowPopup(false), 3000);
+};
+
   return (
     <section id="contact" style={sectionStyle}>
-      {/* Title */}
+   
       <div style={titleWrapper}>
         <motion.h1
           style={titleStyle}
@@ -24,13 +34,12 @@ const Contact = () => {
         />
       </div>
 
-      {/* Description */}
       <p style={descriptionStyle}>
         Have an question or want to work together? Leave a message and I’ll get back to you.
       </p>
 
-      {/* Form */}
-      <form style={formStyle}>
+   
+     <form style={formStyle} onSubmit={handleSubmit}>
   <input type="text" placeholder="Name" style={inputStyle} required />
   <input type="email" placeholder="Email" style={inputStyle} required />
   <textarea placeholder="Message" rows={5} style={textareaStyle} required />
@@ -48,6 +57,16 @@ const Contact = () => {
     Submit
   </motion.button>
 </form>
+{showPopup && (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    style={popupStyle}
+  >
+    <p style={{ margin: 0 }}>{'\u2705'}Message sent successfully!</p>
+  </motion.div>
+)}
+
 
     </section>
   );
@@ -143,3 +162,18 @@ const textareaStyle = {
   minHeight: '140px',
   resize: 'vertical',
 };
+const popupStyle = {
+  position: 'fixed',
+  bottom: '2rem',
+  right: '2rem',
+  backgroundColor: '#000',
+  color: '#fff',
+  padding: '1rem 1.5rem',
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '1rem',
+  zIndex: 1000,
+  boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
+};
+
+
+

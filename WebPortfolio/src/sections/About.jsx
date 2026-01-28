@@ -46,7 +46,7 @@ const About = () => {
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
             Whether I’m collaborating with clients or working on a side project with my son, I’m always learning, always building, and always ready to solve the next problem.
-            When I’m away from my computer I enjoy spending time with family and fitness.
+            When I’m away from my computer I enjoy spending time with family and reading.
           </p>
         </motion.div>
 
