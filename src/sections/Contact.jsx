@@ -1,0 +1,182 @@
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+
+
+
+const Contact = () => {
+   const [showPopup, setShowPopup] = useState(false);
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  setShowPopup(true);
+  e.target.reset();
+
+  setTimeout(() => setShowPopup(false), 3000);
+};
+
+  return (
+    <section id="contact" style={sectionStyle}>
+   
+      <div style={titleWrapper}>
+        <motion.h1
+          style={titleStyle}
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          viewport={{ once: false, amount: 0.6 }}
+        >
+          CONTACT
+        </motion.h1>
+        <motion.div
+          style={underlineStyle}
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          transition={{ duration: 0.4, ease: 'easeOut', delay: 0.2 }}
+          viewport={{ once: true }}
+        />
+      </div>
+
+      <p style={descriptionStyle}>
+        Have an question or want to work together? Leave a message and I’ll get back to you.
+      </p>
+
+   
+     <form style={formStyle} onSubmit={handleSubmit}>
+  <input type="text" placeholder="Name" style={inputStyle} required />
+  <input type="email" placeholder="Email" style={inputStyle} required />
+  <textarea placeholder="Message" rows={5} style={textareaStyle} required />
+
+  <motion.button
+    type="submit"
+    whileHover={{
+      backgroundColor: '#000',
+      color: '#fff',
+      scale: 1.02,
+    }}
+    transition={{ duration: 0.3 }}
+    style={submitButtonStyle}
+  >
+    Submit
+  </motion.button>
+</form>
+{showPopup && (
+  <motion.div
+    initial={{ opacity: 0, scale: 0.9 }}
+    animate={{ opacity: 1, scale: 1 }}
+    style={popupStyle}
+  >
+    <p style={{ margin: 0 }}>{'\u2705'}Message sent successfully!</p>
+  </motion.div>
+)}
+
+
+    </section>
+  );
+};
+
+export default Contact;
+const submitButtonStyle = {
+  padding: '1rem 2rem',
+  backgroundColor: '#fff',
+  color: '#000',
+  border: '2px solid #000',
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '1.1rem',
+  fontWeight: 'bold',
+  textTransform: 'uppercase',
+  cursor: 'pointer',
+  borderRadius: 0,
+  alignSelf: 'flex-end',
+  transition: 'all 0.3s ease',
+};
+
+
+const sectionStyle = {
+  backgroundColor: '#FF7F51',
+  padding: '5rem 2rem',
+  fontFamily: 'Roboto Condensed',
+};
+
+const titleWrapper = {
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  marginBottom: '1rem',
+  height: '100px',
+};
+
+const titleStyle = {
+  fontSize: '3rem',
+  fontWeight: 'bold',
+  color: '#000',
+  margin: 0,
+  letterSpacing: '0.001em',
+  zIndex: 2,
+  textShadow: '2px 2px 6px rgba(0, 0, 0, 0.5)',
+  textAlign: 'center',
+};
+
+
+const underlineStyle = {
+  position: 'absolute',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  bottom: '25px',
+  width: '100px',
+  height: '15px',
+  backgroundColor: '#ce4257',
+  zIndex: 1,
+};
+
+
+const descriptionStyle = {
+  fontFamily: "'JetBrains Mono', monospace",
+  color: '#000',
+  textAlign: 'center',
+  fontSize: '1.25rem',
+  maxWidth: '600px',
+  margin: '0 auto 3rem',
+};
+
+const formStyle = {
+  maxWidth: '600px',
+  margin: '0 auto',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '2rem',
+};
+
+const inputStyle = {
+  padding: '1rem',
+  fontSize: '1.25rem',
+  border: 'none',
+  outline: 'none',
+  fontFamily: "'JetBrains Mono', monospace",
+  color: '#000',
+  backgroundColor: '#fff',
+  borderRadius: 0,
+  boxSizing: 'border-box',
+  width: '100%',
+};
+
+const textareaStyle = {
+  ...inputStyle,
+  minHeight: '140px',
+  resize: 'vertical',
+};
+const popupStyle = {
+  position: 'fixed',
+  bottom: '2rem',
+  right: '2rem',
+  backgroundColor: '#000',
+  color: '#fff',
+  padding: '1rem 1.5rem',
+  fontFamily: "'JetBrains Mono', monospace",
+  fontSize: '1rem',
+  zIndex: 1000,
+  boxShadow: '0 10px 30px rgba(0,0,0,0.4)',
+};
+
+
+
